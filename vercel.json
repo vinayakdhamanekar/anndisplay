@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/webapi", "destination": "http://3.109.123.68:8090/webapi" }
+  ]
+}

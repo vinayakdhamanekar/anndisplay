@@ -2,7 +2,9 @@
   'use strict';
 
   // ---------- Config (mirrors the original Swiper + axios setup) ----------
-  var API_URL = 'http://3.109.123.68:8090/webapi';
+  // On HTTPS (e.g. Vercel) a direct call to the HTTP API is blocked as mixed content,
+  // so go through the same-origin /webapi rewrite defined in vercel.json.
+  var API_URL = location.protocol === 'https:' ? '/webapi' : 'http://3.109.123.68:8090/webapi';
   var AUTOPLAY_DELAY = 5000;   // autoplay: { delay: 5000, disableOnInteraction: false }
   var REQUEST_TIMEOUT = 10000;
   var SWIPE_THRESHOLD = 50;    // px of drag needed to change slide
