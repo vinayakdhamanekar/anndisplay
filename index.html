@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visio-technologies</title>
+    <!-- Fallback font so Kannada renders on systems without a Kannada system font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="slider" id="slider" aria-roledescription="carousel" aria-label="Annigeri 24x7 water supply display">
+      <div class="slider-wrapper" id="sliderWrapper">
+
+        <!-- Slide 1 -->
+        <section class="slide bg-image contain-portrait" style="background-image: url('image/01.png')" aria-label="Slide 1 of 9"></section>
+
+        <!-- Slide 2 -->
+        <section class="slide bg-image contain-portrait" style="background-image: url('image/02.png')" aria-label="Slide 2 of 9"></section>
+
+        <!-- Slide 3: water treatment plant + water quality -->
+        <section class="slide slide-plain" aria-label="Slide 3 of 9">
+          <div class="wtp">
+            <div class="wtp-group">
+              <h1 class="heading">WATER TREATMENT PLANT ನೀರು ಶುದ್ಧೀಕರಣ ಘಟಕ</h1>
+              <div class="card-row card-row-tight">
+                <div class="card">
+                  <h2>WTP INLET</h2><h2 class="mb">FLOW RATE</h2>
+                  <p><span data-field="screen_1.wtp_inlet_flowrate">--</span><span class="unit"> CUM/HR</span></p>
+                </div>
+                <div class="card">
+                  <h2>WTP TODAYS</h2><h2 class="mb">INTAKE</h2>
+                  <p><span data-field="screen_1.wtp_inlet_todays_intake">--</span><span class="unit"> CUM</span></p>
+                </div>
+                <div class="card">
+                  <h2>WTP OUTLET</h2><h2 class="mb">FLOW RATE</h2>
+                  <p><span data-field="screen_1.wtp_outlet_flowrate">--</span><span class="unit"> CUM/HR</span></p>
+                </div>
+                <div class="card">
+                  <h2>TODAYS</h2><h2 class="mb">PIMPINGS</h2>
+                  <p><span data-field="screen_1.todays_pumping">--</span><span class="unit"> CUM</span></p>
+                </div>
+              </div>
+            </div>
+            <div class="wtp-group">
+              <h1 class="heading">WATER QUALITY PARAMETERS ನೀರಿನ ಗುಣಮಟ್ಟ</h1>
+              <div class="card-row">
+                <div class="card card-wide">
+                  <h2>TURBIDITY</h2><h2 class="mb"></h2>
+                  <p><span data-field="screen_1.pw_turbidity">--</span><span class="unit"> NTU</span></p>
+                </div>
+                <div class="card card-wide">
+                  <h2>pH</h2><h2 class="mb"></h2>
+                  <p><span data-field="screen_1.pw_ph">--</span><span class="unit"> </span></p>
+                </div>
+                <div class="card card-wide">
+                  <h2>RESIDUAL</h2><h2 class="mb">CHLORINE</h2>
+                  <p><span data-field="screen_1.pw_pesidual_chlorine">--</span><span class="unit"> PPM</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Slides 4–7: overhead tanks (generated from TANKS in script.js) -->
+        <template id="tankTemplate">
+          <section class="slide bg-image" style="background-image: url('image/TANK_IMAGE.jpg')">
+            <header class="tank-bar">
+              <h1 class="tank-title"><span class="zone"></span> <span class="name"></span></h1>
+              <h1 class="tank-badge">PARAMETER</h1>
+            </header>
+            <div class="tank-body">
+              <div class="tank-row">
+                <div class="metric"><h2>WATER LEVEL</h2><p><span data-key="level">--</span><span class="unit"> METER</span></p></div>
+                <div class="metric"><h2>LINE PRESSURE</h2><p><span data-key="pressure">--</span><span class="unit"> KG/CM2</span></p></div>
+              </div>
+              <div class="tank-row">
+                <div class="metric"><h2>INLET FLOW RATE</h2><p><span data-key="inlet">--</span><span class="unit"> CUM/HR</span></p></div>
+                <div class="metric"><h2>OUTLET FLOW RATE</h2><p><span data-key="outlet">--</span><span class="unit"> CUM/HR</span></p></div>
+              </div>
+            </div>
+          </section>
+        </template>
+
+        <!-- Slide 8: zone-wise water quality table -->
+        <section class="slide slide-plain slide-table" aria-label="Slide 8 of 9">
+          <div class="table-wrap">
+            <table class="quality">
+              <caption>WATER QUALITY PARAMETERS ನೀರಿನ ಗುಣಮಟ್ಟ</caption>
+              <thead>
+                <tr><th></th><th>TURBIDITY</th><th>PH</th><th>CHLORINE</th></tr>
+              </thead>
+              <tbody>
+                <tr><th>ZONE 1</th><td data-field="screen_6.zone_1_turbidity">--</td><td data-field="screen_6.zone_1_ph">--</td><td data-field="screen_6.zone_1_chlorine">--</td></tr>
+                <tr><th>ZONE 2</th><td data-field="screen_6.zone_2_turbidity">--</td><td data-field="screen_6.zone_2_ph">--</td><td data-field="screen_6.zone_2_chlorine">--</td></tr>
+                <tr><th>ZONE 3</th><td data-field="screen_6.zone_3_turbidity">--</td><td data-field="screen_6.zone_3_ph">--</td><td data-field="screen_6.zone_3_chlorine">--</td></tr>
+                <tr><th>ZONE 4</th><td data-field="screen_6.zone_4_turbidity">--</td><td data-field="screen_6.zone_4_ph">--</td><td data-field="screen_6.zone_4_chlorine">--</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Slide 9 -->
+        <section class="slide bg-image contain-portrait" style="background-image: url('image/03.png')" aria-label="Slide 9 of 9"></section>
+      </div>
+
+      <button class="nav-btn nav-prev" id="prevBtn" type="button" aria-label="Previous slide"></button>
+      <button class="nav-btn nav-next" id="nextBtn" type="button" aria-label="Next slide"></button>
+      <div class="pagination" id="pagination" role="tablist"></div>
+      <div class="api-status" id="apiStatus" role="status" aria-live="polite"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
